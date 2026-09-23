@@ -3,252 +3,86 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Employee Leave Balance</title>
-
+<title>Square Denims Ltd - Leave Balance</title>
 <style>
 *{box-sizing:border-box}
-
-body{
-margin:0;
-font-family:Arial,Segoe UI,sans-serif;
-background:#f3f6fb;
-color:#172033;
-}
-
-.header{
-background:linear-gradient(135deg,#1769e0,#123f9c);
-color:white;
-padding:30px 20px 70px;
-}
-
-.header-box{
-max-width:900px;
-margin:auto;
-}
-
-.header h1{
-margin:5px 0;
-font-size:28px;
-}
-
-.header p{
-margin:5px 0;
-opacity:.9;
-}
-
-.container{
-max-width:900px;
-margin:-40px auto 40px;
-padding:0 15px;
-}
-
-.search-box{
-background:white;
-padding:20px;
-border-radius:15px;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-display:flex;
-gap:10px;
-}
-
-.search-box input{
-flex:1;
-padding:14px;
-font-size:16px;
-border:1px solid #ccd5e2;
-border-radius:9px;
-}
-
-.search-box button{
-padding:14px 25px;
-background:#1769e0;
-color:white;
-border:0;
-border-radius:9px;
-font-weight:bold;
-cursor:pointer;
-}
-
-#out{
-margin-top:20px;
-}
-
-.profile{
-background:white;
-border-radius:15px;
-padding:22px;
-box-shadow:0 8px 25px rgba(0,0,0,.07);
-margin-bottom:18px;
-}
-
-.profile h2{
-margin:0 0 12px;
-font-size:25px;
-}
-
-.profile-info{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:12px;
-}
-
-.info-box{
-background:#f5f8fc;
-padding:14px;
-border-radius:10px;
-}
-
-.info-label{
-font-size:12px;
-color:#697586;
-font-weight:bold;
-margin-bottom:5px;
-text-transform:uppercase;
-}
-
-.info-value{
-font-size:16px;
-font-weight:bold;
-}
-
-.summary{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-margin-bottom:18px;
-}
-
-.summary-box{
-background:white;
-padding:20px;
-border-radius:15px;
-box-shadow:0 8px 25px rgba(0,0,0,.07);
-text-align:center;
-}
-
-.summary-title{
-font-size:13px;
-color:#697586;
-font-weight:bold;
-text-transform:uppercase;
-}
-
-.summary-number{
-font-size:30px;
-font-weight:bold;
-margin-top:8px;
-color:#1769e0;
-}
-
-.table-box{
-background:white;
-border-radius:15px;
-box-shadow:0 8px 25px rgba(0,0,0,.07);
-overflow:hidden;
-}
-
-.table-title{
-padding:20px;
-font-size:20px;
-font-weight:bold;
-border-bottom:1px solid #e5e9ef;
-}
-
-.table-scroll{
-overflow-x:auto;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-}
-
-th{
-background:#f5f7fa;
-padding:15px;
-text-align:left;
-font-size:13px;
-color:#536174;
-}
-
-td{
-padding:15px;
-border-top:1px solid #edf0f4;
-}
-
-.center{
-text-align:center;
-}
-
-.type{
-font-weight:bold;
-color:#1769e0;
-}
-
-.balance{
-font-weight:bold;
-color:#1769e0;
-}
-
-.error{
-background:#fff1f0;
-color:#b42318;
-padding:15px;
-border-radius:10px;
-}
-
-.empty{
-background:white;
-padding:25px;
-border-radius:12px;
-text-align:center;
-}
-
+body{margin:0;font-family:Arial,Segoe UI,sans-serif;background:#f3f7f5;color:#172033}
+.header{background:linear-gradient(135deg,#087f5b,#07543e);color:white;padding:24px 20px 65px}
+.header-box{max-width:900px;margin:auto;text-align:center}
+.logo{height:62px;width:auto;background:white;padding:7px;border-radius:8px;margin-bottom:8px}
+.header h1{margin:4px 0;font-size:26px}
+.header p{margin:5px 0;opacity:.92}
+.container{max-width:900px;margin:-38px auto 40px;padding:0 15px}
+.card{background:white;padding:24px;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+.gate{text-align:center;max-width:500px;margin:auto}
+.gate h2{margin:5px 0 8px}
+.gate p{color:#697586}
+input{width:100%;padding:14px;font-size:16px;border:1px solid #ccd5e2;border-radius:9px;outline:none}
+button{padding:14px 24px;background:#087f5b;color:white;border:0;border-radius:9px;font-weight:bold;cursor:pointer}
+button:hover{opacity:.92}
+.primary{width:100%;margin-top:12px}
+.error{background:#fff1f0;color:#b42318;padding:14px;border-radius:10px;margin-top:12px}
+.empty{background:white;padding:25px;border-radius:12px;text-align:center}
+.search-box{background:white;padding:20px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,.08);display:flex;gap:10px}
+.search-box input{flex:1}
+.search-box button{min-width:110px}
+.top-actions{display:flex;justify-content:flex-end;margin:0 0 12px}
+.lock{background:#536174;padding:9px 15px;font-size:13px}
+#out{margin-top:20px}
+.profile{background:white;border-radius:15px;padding:22px;box-shadow:0 8px 25px rgba(0,0,0,.07);margin-bottom:18px}
+.profile h2{margin:0 0 12px;font-size:22px}
+.profile-info{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.info-box{background:#f2f8f5;padding:14px;border-radius:10px}
+.info-label{font-size:12px;color:#697586;font-weight:bold;margin-bottom:5px;text-transform:uppercase}
+.info-value{font-size:16px;font-weight:bold}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:18px}
+.summary-box{background:white;padding:20px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,.07);text-align:center}
+.summary-title{font-size:13px;color:#697586;font-weight:bold;text-transform:uppercase}
+.summary-number{font-size:30px;font-weight:bold;margin-top:8px;color:#087f5b}
+.table-box{background:white;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,.07);overflow:hidden}
+.table-title{padding:20px;font-size:20px;font-weight:bold;border-bottom:1px solid #e5e9ef}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{background:#f5f7fa;padding:15px;text-align:left;font-size:13px;color:#536174}
+td{padding:15px;border-top:1px solid #edf0f4}
+.center{text-align:center}
+.type{font-weight:bold;color:#087f5b}
+.balance{font-weight:bold;color:#087f5b}
+.hidden{display:none}
 @media(max-width:650px){
-
-.header h1{
-font-size:23px;
-}
-
-.search-box{
-flex-direction:column;
-}
-
-.search-box input,
-.search-box button{
-width:100%;
-}
-
-.profile-info{
-grid-template-columns:1fr;
-}
-
-.summary{
-grid-template-columns:1fr;
-}
-
-.table-box{
-overflow:hidden;
-}
-
-table{
-min-width:650px;
-}
-
+.header h1{font-size:22px}
+.search-box{flex-direction:column}
+.search-box input,.search-box button{width:100%}
+.profile-info,.summary{grid-template-columns:1fr}
+table{min-width:650px}
 }
 </style>
 </head>
-
 <body>
 
 <div class="header">
 <div class="header-box">
-<h1>Employee Leave Balance</h1>
-<p>Search your leave information using Employee ID</p>
+<img class="logo" src="/static/square_logo.png" alt="SQUARE">
+<h1>Square Denims Ltd</h1>
+<p>Employee Leave Balance Portal</p>
 </div>
 </div>
 
 <div class="container">
+
+<div id="gate" class="card gate">
+<h2>🔐 Secure Access</h2>
+<p>Enter the common password to access your leave balance.</p>
+<input id="password" type="password" placeholder="Enter Password">
+<button class="primary" onclick="unlock()">Enter Portal</button>
+<div id="gateError"></div>
+</div>
+
+<div id="portal" class="hidden">
+
+<div class="top-actions">
+<button class="lock" onclick="lockPortal()">🔒 Lock Portal</button>
+</div>
 
 <div class="search-box">
 <input id="id" placeholder="Enter Employee ID">
@@ -256,271 +90,115 @@ min-width:650px;
 </div>
 
 <div id="out"></div>
+</div>
 
 </div>
 
 <script>
-
 function e(s){
 return String(s ?? '').replace(/[&<>"']/g,m=>({
-'&':'&amp;',
-'<':'&lt;',
-'>':'&gt;',
-'"':'&quot;',
-"'":'&#39;'
+'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
 }[m]));
 }
 
-function cleanKey(k){
-return String(k).trim().toUpperCase().replace(/\s+/g,'_');
-}
+function cleanKey(k){return String(k).trim().toUpperCase().replace(/\s+/g,'_');}
 
 const names={
-CL:'Casual Leave',
-SL:'Sick Leave',
-EL:'Earned Leave',
-LWP:'Leave Without Pay',
-AL:'Annual Leave',
-ML:'Medical Leave',
-OL:'Other Leave',
-PL:'Privilege Leave',
-MPL:'Maternity Leave',
-BL:'Bereavement Leave'
+CL:'Casual Leave',SL:'Sick Leave',EL:'Earned Leave',LWP:'Leave Without Pay',
+AL:'Annual Leave',ML:'Medical Leave',OL:'Other Leave',PL:'Privilege Leave',
+MPL:'Maternity Leave',BL:'Bereavement Leave'
 };
 
 function leaveRows(emp){
-
-const keys=Object.keys(emp);
-const rows=[];
-const bases=[];
-
+const keys=Object.keys(emp),rows=[],bases=[];
 keys.forEach(k=>{
-
 const m=cleanKey(k).match(/^(.+?)_(TOTAL|AVAILED|TAKEN|BALANCE)$/);
-
-if(m && !bases.includes(m[1])){
-bases.push(m[1]);
-}
-
+if(m&&!bases.includes(m[1]))bases.push(m[1]);
 });
-
 bases.forEach(base=>{
-
-const find=suffix=>
-keys.find(k=>cleanKey(k)===base+'_'+suffix);
-
-const total=find('TOTAL');
-const taken=find('AVAILED')||find('TAKEN');
-const bal=find('BALANCE');
-
+const find=suffix=>keys.find(k=>cleanKey(k)===base+'_'+suffix);
+const total=find('TOTAL'),taken=find('AVAILED')||find('TAKEN'),bal=find('BALANCE');
 if(total||taken||bal){
-
 let type=base.replace(/_/g,' ');
 let name=names[base]||type;
-
-rows.push({
-type,
-name,
-total:emp[total]??'',
-taken:emp[taken]??'',
-balance:emp[bal]??''
-});
-
+rows.push({type,name,total:emp[total]??'',taken:emp[taken]??'',balance:emp[bal]??''});
 }
-
 });
-
 return rows;
 }
 
-async function go(){
+async function unlock(){
+const p=document.getElementById('password').value.trim();
+const er=document.getElementById('gateError');
+er.innerHTML='';
+if(!p){er.innerHTML='<div class="error">Please enter the password.</div>';return;}
+try{
+const r=await fetch('/api/access',{
+method:'POST',
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify({password:p})
+});
+const d=await r.json();
+if(!r.ok){er.innerHTML='<div class="error">'+e(d.error||'Wrong password')+'</div>';return;}
+document.getElementById('gate').classList.add('hidden');
+document.getElementById('portal').classList.remove('hidden');
+document.getElementById('password').value='';
+document.getElementById('id').focus();
+}catch(err){
+er.innerHTML='<div class="error">Unable to connect to the server. Please try again.</div>';
+}
+}
 
+async function lockPortal(){
+await fetch('/api/access/logout',{method:'POST'});
+document.getElementById('portal').classList.add('hidden');
+document.getElementById('gate').classList.remove('hidden');
+document.getElementById('out').innerHTML='';
+document.getElementById('id').value='';
+document.getElementById('password').focus();
+}
+
+async function go(){
 const id=document.getElementById('id').value.trim();
 const o=document.getElementById('out');
-
-if(!id){
-
-o.innerHTML='<div class="empty">Please enter an Employee ID.</div>';
-
-return;
-}
-
+if(!id){o.innerHTML='<div class="empty">Please enter an Employee ID.</div>';return;}
 o.innerHTML='<div class="empty">Searching...</div>';
-
 try{
-
 const r=await fetch('/api/search?employee_id='+encodeURIComponent(id));
 const d=await r.json();
-
-if(!r.ok){
-
-o.innerHTML='<div class="error">'+
-e(d.error||'Employee ID not found')+
-'</div>';
-
-return;
-}
-
-const emp=d.employee||{};
-const rows=leaveRows(emp);
-
+if(!r.ok){o.innerHTML='<div class="error">'+e(d.error||'Employee ID not found')+'</div>';return;}
+const emp=d.employee||{},rows=leaveRows(emp);
 const name=emp.NAME||emp.Name||'Employee';
 const des=emp.DESIGNATION||emp.Designation||'';
 const eid=emp.ID||id;
-
-let total=0;
-let taken=0;
-let balance=0;
-
+let total=0,taken=0,balance=0;
 rows.forEach(x=>{
-
 total+=Number(String(x.total).replace(/,/g,''))||0;
 taken+=Number(String(x.taken).replace(/,/g,''))||0;
 balance+=Number(String(x.balance).replace(/,/g,''))||0;
-
 });
-
 let table='';
-
 if(rows.length){
-
-table=`
-<div class="table-box">
-
-<div class="table-title">
-Leave Summary
-</div>
-
-<div class="table-scroll">
-
-<table>
-
-<thead>
-
-<tr>
-<th>Type</th>
-<th>Leave Name</th>
-<th class="center">Total Leave</th>
-<th class="center">Leave Taken</th>
-<th class="center">Leave Balance</th>
-</tr>
-
-</thead>
-
-<tbody>
-
-${rows.map(x=>`
-
-<tr>
-
-<td class="type">${e(x.type)}</td>
-
-<td>${e(x.name)}</td>
-
-<td class="center">${e(x.total)}</td>
-
-<td class="center">${e(x.taken)}</td>
-
-<td class="center balance">${e(x.balance)}</td>
-
-</tr>
-
-`).join('')}
-
-</tbody>
-
-</table>
-
-</div>
-</div>
-`;
-
+table=`<div class="table-box"><div class="table-title">Leave Summary</div><div class="table-scroll">
+<table><thead><tr><th>Type</th><th>Leave Name</th><th class="center">Total Leave</th><th class="center">Leave Taken</th><th class="center">Leave Balance</th></tr></thead>
+<tbody>${rows.map(x=>`<tr><td class="type">${e(x.type)}</td><td>${e(x.name)}</td><td class="center">${e(x.total)}</td><td class="center">${e(x.taken)}</td><td class="center balance">${e(x.balance)}</td></tr>`).join('')}</tbody>
+</table></div></div>`;
 }
-
-o.innerHTML=`
-
-<div class="profile">
-
-<h2>Employee Information</h2>
-
-<div class="profile-info">
-
-<div class="info-box">
-
-<div class="info-label">Name</div>
-
-<div class="info-value">${e(name)}</div>
-
-</div>
-
-<div class="info-box">
-
-<div class="info-label">Designation</div>
-
-<div class="info-value">${e(des)}</div>
-
-</div>
-
-<div class="info-box">
-
-<div class="info-label">Employee ID</div>
-
-<div class="info-value">${e(eid)}</div>
-
-</div>
-
-</div>
-
-</div>
-
+o.innerHTML=`<div class="profile"><h2>Employee Information</h2><div class="profile-info">
+<div class="info-box"><div class="info-label">Name</div><div class="info-value">${e(name)}</div></div>
+<div class="info-box"><div class="info-label">Designation</div><div class="info-value">${e(des)}</div></div>
+<div class="info-box"><div class="info-label">Employee ID</div><div class="info-value">${e(eid)}</div></div>
+</div></div>
 <div class="summary">
-
-<div class="summary-box">
-
-<div class="summary-title">Total Leave</div>
-
-<div class="summary-number">${total}</div>
-
-</div>
-
-<div class="summary-box">
-
-<div class="summary-title">Leave Taken</div>
-
-<div class="summary-number">${taken}</div>
-
-</div>
-
-<div class="summary-box">
-
-<div class="summary-title">Leave Balance</div>
-
-<div class="summary-number">${balance}</div>
-
-</div>
-
-</div>
-
-${table}
-
-`;
-
-}catch(err){
-
-o.innerHTML=
-'<div class="error">Unable to connect to the server. Please try again.</div>';
-
+<div class="summary-box"><div class="summary-title">Total Leave</div><div class="summary-number">${total}</div></div>
+<div class="summary-box"><div class="summary-title">Leave Taken</div><div class="summary-number">${taken}</div></div>
+<div class="summary-box"><div class="summary-title">Leave Balance</div><div class="summary-number">${balance}</div></div>
+</div>${table}`;
+}catch(err){o.innerHTML='<div class="error">Unable to connect to the server. Please try again.</div>';}
 }
 
-}
-
-document.getElementById('id').addEventListener('keydown',x=>{
-
-if(x.key==='Enter') go();
-
-});
-
+document.getElementById('password').addEventListener('keydown',x=>{if(x.key==='Enter')unlock();});
+document.getElementById('id').addEventListener('keydown',x=>{if(x.key==='Enter')go();});
 </script>
-
 </body>
 </html>
